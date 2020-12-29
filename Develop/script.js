@@ -5,6 +5,7 @@ function requirements () {
 
   // Assigns an empty string value to charNumber.
   var charNumber = "";
+ 
 
 
   //Ensures the minimum and maximux requirements are met. 
@@ -18,56 +19,43 @@ function requirements () {
       alert("Whoopsie! That's not a number! Try again!");
     }
   }
-
   // Alerts user to their choice of character length.
   alert("Great! You chose " + charNumber + " characters.");
 
 
 
   //Need code to ensure at least one of these is true. 
-  
 
-//   while (lowercase === false && uppercase === false && numbers === false && specialChar === false) {
-//     alert("You must choose to include at least one from the following: lowercase, uppercase, numbers, and special characters.");
+  while ([lowercase, uppercase, numbers, specialChar] !== true) {
+    alert("You must choose to include AT LEAST ONE from the following: lowercase, uppercase, numbers, and special characters.");
+    
+    //Lowercase prompt and comfirm.
+    var lowercase = confirm("Should I include LOWERCASE characters?");
+      
+    //Uppercase prompt and confirm.
+    var uppercase = confirm("Should I include UPPERCASE characters?");
+      
 
-//     //Lowercase prompt and comfirm.
-//     var lowercase = confirm("Include lowercase?");
-//       if (lowercase === true) {
-//       alert("Password WILL include lowercase characters.");
-//       }
-//       else {
-//       alert("Password WILL NOT include lowercase characters.");
-//       }
+    //Numbers prompt and confirm.
+    var numbers = confirm("Shall I include numbers?");
+   
 
-//     //Uppercase prompt and confirm.
-//     var uppercase = confirm("Include uppercase?");
-//       if (uppercase === true) {
-//       alert("Password WILL include uppercase characters.");
-//       }
-//       else {
-//       alert("Password WILL NOT include uppercase characters.");
-//       }
+    //Special Character prompt and confirm.
+     var specialChar = confirm("How about special characters?");
+    
+      if ([lowercase, uppercase, numbers, specialChar] === false) {
+      alert("Your choices did not meet the criteria! Did you even read the instructions?");
+      }
+      else {
+        break;
+      }
+    }
 
-//     var numbers = confirm("Include numbers?");
-//     if (numbers === true) {
-//       alert("Password WILL include numbers.");
-//       }
-//       else {
-//       alert("Password WILL NOT include numbers.");
-//       }
 
-//     var specialChar = confirm("Include special characters?");
-//     if (specialChar === true) {
-//       alert("Password WILL include special characters.");
-//       }
-//       else {
-//       alert("Password WILL NOT include special characters.");
-//       }
+    alert("Great!")
+   
 
-//       alert("Your choices did not meet the criteria!");
-//     }
-
-//     alert("Great! Click 'ok' to reveal your new password!");
+    // alert("You're on your way! Click 'ok' to reveal your brand new password!");
 
       
 // //   return [charNumber, lowercase, uppercase, numbers, specialChar];
