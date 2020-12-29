@@ -3,21 +3,25 @@ var generateBtn = document.querySelector("#generate");
 
 function requirements () {
 
-// Assigns an empty string value to charNumber.
-var charNumber = ""
+  // Assigns an empty string value to charNumber.
+  var charNumber = "";
 
 
-//Ensures the minimum and maximux requirements are met. 
-  while (charNumber < 8 || charNumber > 128) {
-    // Prompts an input for desired character length.
+  //Ensures the minimum and maximux requirements are met. 
+  while (charNumber < 8 | charNumber > 128 | isNaN(charNumber)) {
     charNumber = prompt("Please choose your desired character length. Must be a number between 8 and 128.");
-    //Ensures charNumber is an integer. 
     charNumber = parseInt(charNumber);
-    //Remind user of the parameters.
-    alert("Ooops! Try again! You must choose a valid number!"); //// This isn't working!!!!!!!
+    if (charNumber < 8 | charNumber > 128) {
+      alert("Ooops! You must type a valid number! Try again!");
+    }
+    if (isNaN(charNumber)) {
+      alert("Whoopsie! That's not a number! Try again!");
+    }
   }
+
   // Alerts user to their choice of character length.
   alert("Great! You chose " + charNumber + " characters.");
+
 
 
   //Need code to ensure at least one of these is true. 
@@ -80,4 +84,4 @@ var charNumber = ""
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
