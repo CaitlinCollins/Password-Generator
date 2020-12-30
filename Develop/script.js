@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function requirements () {
+function writePassword() {
 
   // Assigns an empty string value to charNumber.
   var charNumberInput = "";
@@ -78,23 +78,25 @@ function requirements () {
       }
     }
 
-    
-    alert("Great! Click 'ok' to reveal your brand new password!");
-    console.log(allPassCharacters);
+   alert("Great! Click 'ok' to reveal your brand new password!");
+
    
-      
-// //   return [charNumber, lowercase, uppercase, numbers, specialChar];
-// // }
+// Write password to the #password input
+// Take the special characters selected and randomize them with the chosen character length.
 
 
-// // // Write password to the #password input
-// // function writePassword() {
-// //   var password = generatePassword();
-// //   var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-// //   passwordText.value = password;
+  passwordText.value = password;
 
+  function generatePassword() {
+    for (var i = 0; i < charNumberInput; i++) {
+      var randomize = Math.floor(Math.random() * allPassCharacters.length);
+      password += allPassCharacters.substring(randomize, randomize + 1);
+      console.log(password);
+    }
+  } 
 }
-
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
