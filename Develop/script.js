@@ -4,68 +4,73 @@ var generateBtn = document.querySelector("#generate");
 function requirements () {
 
   // Assigns an empty string value to charNumber.
-  var charNumber = "";
+  var charNumberInput = "";
+  var allPassCharacters = "";
+
+  const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberCharacters = "0123456789";
+  const specialCharacters = "!@#$%^&*?><+=~"
  
-
-
-  //Ensures the minimum and maximux requirements are met. 
-  while (charNumber < 8 | charNumber > 128 | isNaN(charNumber)) {
-    charNumber = prompt("Please choose your desired character length. Must be a number between 8 and 128.");
-    charNumber = parseInt(charNumber);
-    if (charNumber < 8 | charNumber > 128) {
+  //Ensures the minimum and maximux character length requirements are met. 
+  while (charNumberInput < 8 | charNumberInput > 128 | isNaN(charNumberInput)) {
+    charNumberInput = prompt("Please choose your desired character length. Must be a number between 8 and 128.");
+    charNumberInput = parseInt(charNumberInput);
+    if (charNumberInput < 8 | charNumberInput > 128) {
       alert("Ooops! You must type a valid number! Try again!");
     }
-    if (isNaN(charNumber)) {
+    if (isNaN(charNumberInput)) {
       alert("Whoopsie! That's not a number! Try again!");
     }
   }
   // Alerts user to their choice of character length.
-  alert("Great! You chose " + charNumber + " characters.");
+  alert("Great! You chose " + charNumberInput + " characters.");
 
 
-
-  //Need code to ensure at least one of these is true. 
-
-  while ([lowercase, uppercase, numbers, specialChar] !== true) {
+  //This code ensures at lease one of these is true.
+  while ([lowercaseInput, uppercaseInput, numbersInput, specialCharInput] !== true) {
     alert("You must choose to include AT LEAST ONE from the following: lowercase, uppercase, numbers, and special characters.");
     
-    //Lowercase prompt and comfirm.
-    var lowercase = confirm("Should I include LOWERCASE characters?");
-      if (lowercase === true) {
+    //Lowercase confirm and alert.
+    var lowercaseInput = confirm("Should I include LOWERCASE characters?");
+      if (lowercaseInput === true) {
+        allPassCharacters += lowercaseCharacters;
         alert("Great choice! Your password WILL include lowercase characters!")
       }
       else {
         alert("Whatever. No lowercase characters for you!")
       }
       
-    //Uppercase prompt and confirm.
-    var uppercase = confirm("Should I include UPPERCASE characters?");
-      if (uppercase === true) {
+    //Uppercase confirm and alert.
+    var uppercaseInput = confirm("Should I include UPPERCASE characters?");
+      if (uppercaseInput === true) {
+        allPassCharacters += uppercaseCharacters;
         alert("Wise decision! Your password WILL include uppercase characters!")
       }
       else {
         alert("Have it your way. No uppercase characters today.")
       }
       
-    //Numbers prompt and confirm.
-    var numbers = confirm("Shall I include numbers?");
-      if (numbers === true) {
+    //Numbers confirm and alert.
+    var numbersInput = confirm("Shall I include numbers?");
+      if (numbersInput === true) {
+        allPassCharacters += numberCharacters;
         alert("Brilliant! Your password WILL include numbers!")
       }
       else {
         alert("What, are you daft? No numbers will be included.")
       }
    
-    //Special Character prompt and confirm.
-    var specialChar = confirm("How about special characters?");
-      if (specialChar === true) {
+    //Special Character confirm and alert.
+    var specialCharInput = confirm("How about special characters?");
+      if (specialCharInput === true) {
+        allPassCharacters += specialCharacters;
         alert("Amazeballs! Your password WILL include special characters!")
       }
       else {
         alert("Do you even know what you want? No special characters, I guess.")
       }
-    
-      if (lowercase !== true && uppercase !== true && numbers !== true && specialChar !== true) {
+      if (lowercaseInput !== true && uppercaseInput !== true && numbersInput !== true && specialCharInput !== true) {
       alert("Your choices did not meet the criteria! Did you even read the instructions?");
       }
       else {
@@ -73,12 +78,10 @@ function requirements () {
       }
     }
 
-
-    alert("Great!")
+    
+    alert("Great! Click 'ok' to reveal your brand new password!");
+    console.log(allPassCharacters);
    
-
-    // alert("You're on your way! Click 'ok' to reveal your brand new password!");
-
       
 // //   return [charNumber, lowercase, uppercase, numbers, specialChar];
 // // }
