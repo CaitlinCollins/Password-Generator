@@ -31,19 +31,41 @@ function requirements () {
     
     //Lowercase prompt and comfirm.
     var lowercase = confirm("Should I include LOWERCASE characters?");
+      if (lowercase === true) {
+        alert("Great choice! Your password WILL include lowercase characters!")
+      }
+      else {
+        alert("Whatever. No lowercase characters for you!")
+      }
       
     //Uppercase prompt and confirm.
     var uppercase = confirm("Should I include UPPERCASE characters?");
+      if (uppercase === true) {
+        alert("Wise decision! Your password WILL include uppercase characters!")
+      }
+      else {
+        alert("Have it your way. No uppercase characters today.")
+      }
       
-
     //Numbers prompt and confirm.
     var numbers = confirm("Shall I include numbers?");
+      if (numbers === true) {
+        alert("Brilliant! Your password WILL include numbers!")
+      }
+      else {
+        alert("What, are you daft? No numbers will be included.")
+      }
    
-
     //Special Character prompt and confirm.
-     var specialChar = confirm("How about special characters?");
+    var specialChar = confirm("How about special characters?");
+      if (specialChar === true) {
+        alert("Amazeballs! Your password WILL include special characters!")
+      }
+      else {
+        alert("Do you even know what you want? No special characters, I guess.")
+      }
     
-      if ([lowercase, uppercase, numbers, specialChar] === false) {
+      if (lowercase !== true && uppercase !== true && numbers !== true && specialChar !== true) {
       alert("Your choices did not meet the criteria! Did you even read the instructions?");
       }
       else {
