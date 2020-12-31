@@ -3,13 +3,13 @@ Javascript: Modifying Starter Code
 ## Table of Contents ##
 [Description]
 
-[Javascript Tools Used]
+[Javascript Tools Used](https://github.com/CaitlinCollins/Password-Generator#description)
 
-[Features]
+[Features](https://github.com/CaitlinCollins/Password-Generator#features)
 
-[Screen Shots]
+[Screen Shots](https://github.com/CaitlinCollins/Password-Generator#screenshots)
 
-[Deploy Link]
+[Deploy Link](https://github.com/CaitlinCollins/Password-Generator#deploylink)
 ## Description ##
 The purpose of this project was to create an application that generates a random password by modifyig the starter code provided. The user is given the choice of character length and which character groups they would like to be included in the password. 
 ## Javascript Tools Used ##
