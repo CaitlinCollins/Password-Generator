@@ -8,7 +8,7 @@ var allPassCharacters = "";
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberCharacters = "0123456789";
-const specialCharacters = "!@#$%^&*?><+=~";
+const specialCharacters = " !'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Function that gathers the information.
 function writePassword() {
