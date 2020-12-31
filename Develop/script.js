@@ -1,18 +1,19 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
+// Assigns an empty string value to charNumber and allPassCharacters.
+var generateBtn = document.querySelector("#generate");
+var charNumberInput = "";
+var allPassCharacters = "";
+
+// Assigns constants to character variables.
+const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numberCharacters = "0123456789";
+const specialCharacters = "!@#$%^&*?><+=~";
+
+// Function that gathers the information.
 function writePassword() {
 
-  // Assigns an empty string value to charNumber.
-  var charNumberInput = "";
-  var allPassCharacters = "";
-
-  const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
-  const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numberCharacters = "0123456789";
-  const specialCharacters = "!@#$%^&*?><+=~"
- 
-  //Ensures the minimum and maximux character length requirements are met. 
+  // Ensures the minimum and maximux character length requirements are met. 
   while (charNumberInput < 8 | charNumberInput > 128 | isNaN(charNumberInput)) {
     charNumberInput = prompt("Please choose your desired character length. Must be a number between 8 and 128.");
     charNumberInput = parseInt(charNumberInput);
@@ -26,12 +27,11 @@ function writePassword() {
   // Alerts user to their choice of character length.
   alert("Great! You chose " + charNumberInput + " characters.");
 
-
-  //This code ensures at lease one of these is true.
+  // Ensures at lease one of the following is true.
   while ([lowercaseInput, uppercaseInput, numbersInput, specialCharInput] !== true) {
     alert("You must choose to include AT LEAST ONE from the following: lowercase, uppercase, numbers, and special characters.");
     
-    //Lowercase confirm and alert.
+    // Lowercase confirm and alert.
     var lowercaseInput = confirm("Should I include LOWERCASE characters?");
       if (lowercaseInput === true) {
         allPassCharacters += lowercaseCharacters;
@@ -41,7 +41,7 @@ function writePassword() {
         alert("Whatever. No lowercase characters for you!")
       }
       
-    //Uppercase confirm and alert.
+    // Uppercase confirm and alert.
     var uppercaseInput = confirm("Should I include UPPERCASE characters?");
       if (uppercaseInput === true) {
         allPassCharacters += uppercaseCharacters;
@@ -51,7 +51,7 @@ function writePassword() {
         alert("Have it your way. No uppercase characters today.")
       }
       
-    //Numbers confirm and alert.
+    // Numbers confirm and alert.
     var numbersInput = confirm("Shall I include numbers?");
       if (numbersInput === true) {
         allPassCharacters += numberCharacters;
@@ -61,7 +61,7 @@ function writePassword() {
         alert("What, are you daft? No numbers will be included.")
       }
    
-    //Special Character confirm and alert.
+    // Special Character confirm and alert.
     var specialCharInput = confirm("How about special characters?");
       if (specialCharInput === true) {
         allPassCharacters += specialCharacters;
@@ -78,25 +78,28 @@ function writePassword() {
       }
     }
 
-   alert("Great! Click 'ok' to reveal your brand new password!");
+  alert("Great! Click 'ok' to reveal your brand new password!");
 
-   
-// Write password to the #password input
-// Take the special characters selected and randomize them with the chosen character length.
-
-
+  // Write password to the #password input
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-  function generatePassword() {
-    for (var i = 0; i < charNumberInput; i++) {
-      var randomize = Math.floor(Math.random() * allPassCharacters.length);
-      password += allPassCharacters.substring(randomize, randomize + 1);
-      console.log(password);
-    }
-  } 
 }
+
+// This function takes the special characters selected and randomizes them with the chosen character length.
+function generatePassword() {
+
+  // Establishes an empty string variable. 
+  var result = "";
+
+  for (var i = 0; i < charNumberInput; i++) {
+    var randomize = Math.floor(Math.random() * allPassCharacters.length);
+    result += allPassCharacters.charAt(randomize);
+    console.log(result);
+    console.log(result.length);
+  }
+  return (result);
+} 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
