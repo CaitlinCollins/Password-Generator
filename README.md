@@ -26,8 +26,8 @@ The purpose of this project was to create an application that generates a random
 * A random password that meets all criteria and displays to the page.
 * No errors in the console log.
 ## Screen Shots ##
-https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password1.png
-https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password2.png
+[https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password1.png]
+(https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password2.png)
 https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password3.png
 https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password4.png
 
