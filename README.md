@@ -32,3 +32,4 @@ The purpose of this project was to create an application that generates a random
 ![Password4](https://github.com/CaitlinCollins/Password-Generator/blob/main/Assets/Password4.png)
 
 ## Deploy Link ##
+https://caitlincollins.github.io/Password-Generator/
